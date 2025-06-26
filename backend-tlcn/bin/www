@@ -1,0 +1,76 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+import app from '../src/app.js';
+import debugLib from 'debug';
+import http from 'http';
+import { initSocket } from '../src/socket/socket.js';
+import {disconnectDB} from "../src/config/mongooseConfig.js";
+
+const debug = debugLib('backside-tlcn:server');
+
+const port = normalizePort(process.env.PORT || '8080');
+
+app.set('port', port);
+
+const server = http.createServer(app);
+
+initSocket(server) // Khởi tạo WebSocket
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+function normalizePort(val) {
+  const port = parseInt(val, 10);
+  if (isNaN(port)) return val;
+  if (port >= 0) return port;
+  return false;
+}
+
+function onError(error) {
+  if (error.syscall !== 'listen') throw error;
+  const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+function onListening() {
+  const addr = server.address();
+  const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}
+
+const shutdownHandler = async (signal) => {
+  console.log(`Received ${signal}. Closing connections...`);
+  try {
+    await disconnectDB(); // Đóng kết nối MongoDB
+    console.log('MongoDB connection closed.');
+    server.close(() => {
+      console.log('Server shut down.');
+      process.exit(0); // Thoát chương trình thành công
+    });
+  } catch (error) {
+    console.error('Error during shutdown:', error);
+    process.exit(1); // Thoát với mã lỗi
+  }
+};
+
+process.on('SIGINT', shutdownHandler);  // Khi nhấn Ctrl+C
+process.on('SIGTERM', shutdownHandler); // Khi bị hệ thống gửi tín hiệu tắt
+process.on('exit', () => {
+  console.log('Process exited.');
+});
+

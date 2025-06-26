@@ -1,0 +1,69 @@
+{
+  "expo": {
+    "name": "VieWay",
+    "slug": "frontend-tlcn",
+    "version": "1.0.3",
+    "orientation": "portrait",
+    "icon": "./src/assets/images/icon.png",
+    "scheme": "frontendtlcn",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.miquan144.frontendtlcn",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSCameraUsageDescription": "Ứng dụng cần quyền truy cập camera để chụp ảnh và quay video cho các tính năng chia sẻ và cập nhật hồ sơ.",
+        "NSPhotoLibraryUsageDescription": "Ứng dụng cần quyền truy cập vào bộ sưu tập ảnh để bạn có thể chọn ảnh/video từ thư viện của mình.",
+        "NSLocationWhenInUseUsageDescription": "Ứng dụng cần quyền truy cập vị trí của bạn khi đang sử dụng để cung cấp các tính năng bản đồ và địa điểm.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Ứng dụng cần quyền truy cập vị trí của bạn mọi lúc để cung cấp các tính năng bản đồ và địa điểm, ngay cả khi bạn không sử dụng ứng dụng. Điều này giúp cải thiện trải nghiệm liên quan đến vị trí."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/images/icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.miquan144.frontendtlcn",
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./src/assets/images/icon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./src/assets/images/icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "URL_BACKEND": "https://backend-tlcn-336992372781.asia-southeast1.run.app",
+      "Maps_API_KEY": "AIzaSyCpFSD5ZJ7Ic8LDp0LKmwS70l9PzRtaMKY",
+      "API_URL_CHECK_TOXIC": "https://my-api-service-336992372781.asia-southeast1.run.app",
+      "API_KEY_CHECK_TOXIC": "mysecretkey123",
+      "GEMINI_API_KEY": "AIzaSyD4wBbK3GPwSSAKxQNL1Qnv0-SMS_VlBOM",
+      "router": {},
+      "eas": {
+        "projectId": "91dd1d2f-0634-44f6-927c-7ae2fce6dc1d"
+      }
+    }
+  }
+}
