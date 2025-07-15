@@ -27,7 +27,7 @@ Mục tiêu chính là tạo ra một mạng xã hội an toàn, hiệu quả, t
 ---
 
 ## ✨ Tính năng chính
-<img width="940" height="992" alt="image" src="https://github.com/user-attachments/assets/c17d824e-dfe4-4006-9c9e-59c639ecc1c5" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/c17d824e-dfe4-4006-9c9e-59c639ecc1c5" />
 
 Ứng dụng được phát triển với đầy đủ các chức năng của một mạng xã hội du lịch hiện đại:
 
@@ -64,7 +64,7 @@ Dự án được xây dựng dựa trên MERN Stack và tích hợp các mô h�
     * **JSON Web Token (JWT):** Sử dụng để xác thực và bảo mật cho người dùng.
 
 * **Frontend (Mobile):**
-<img width="268" height="508" alt="image" src="https://github.com/user-attachments/assets/59d1106f-6d22-4a33-b7b1-08a15041ca0e" />
+<img width="200" height="300" alt="image" src="https://github.com/user-attachments/assets/59d1106f-6d22-4a33-b7b1-08a15041ca0e" />
 
     * **React Native:** Framework phát triển ứng dụng di động đa nền tảng (iOS & Android) từ một mã nguồn duy nhất.
     * **TypeScript:** Đảm bảo mã nguồn ổn định, dễ bảo trì và giảm thiểu lỗi.
