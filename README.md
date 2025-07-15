@@ -27,6 +27,7 @@ Mục tiêu chính là tạo ra một mạng xã hội an toàn, hiệu quả, t
 ---
 
 ## ✨ Tính năng chính
+<img width="442" height="464" alt="image" src="https://github.com/user-attachments/assets/46ea6907-538c-4e1f-b9be-37bbde24c7c0" />
 
 Ứng dụng được phát triển với đầy đủ các chức năng của một mạng xã hội du lịch hiện đại:
 
